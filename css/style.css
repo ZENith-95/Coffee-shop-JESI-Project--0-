@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-clr: #443;
+
+  /* horizontal/vertical  */
+  --border-radius: 95% 4% 97% 5% / 4% 94% 3% 95%;
+  --border-radius-hover: 4% 95% 6% 95% / 95% 4% 92% 5%;
+
+  --border: 0.2rem solid var(--main-clr);
+  --border-hover: 0.2rem dotted var(--main-clr);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  /* outline: none; */
+  /* border: none; */
+  text-transform: capitalize;
+  transition: all 0.3s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+}
+
+/* section styling */
+
+section {
+  padding: 2rem 9%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  background-color: #fff;
+  z-index: 9;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.13);
+}
+
+.header .logo {
+  color: var(--main-clr);
+  font-size: 2.3rem;
+}
+
+.header .logo i {
+  padding-left: 1rem;
+}
+
+.header .navbar a {
+  margin: 0 1rem;
+  color: var(--main-clr);
+  font-size: 1.7rem;
+}
+
+.btn{
+    border: var(--border);
+    padding: 0.9rem 1.5rem;
+    border-radius: var(--border-radius);
+
+
+}
+
+.btn:hover{
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+
+.heading{
+    font-size: 9rem;
+    text-transform: uppercase;
+    color: var(--main-clr);
+    -webkit-text-stroke: o.05rem var(--main-clr);
+    letter-spacing: 0.2rem;
+    position: relative;
+    pointer-events: none;
+    text-align: center;
+}
+
+.heading span{
+    position: absolute;
+}
