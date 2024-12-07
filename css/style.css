@@ -97,14 +97,16 @@ section {
   padding-left: 1rem;
 }
 
-.header .navbar a, .header .nav-bar a {
+.header .navbar a,
+.header .nav-bar a {
   margin: 0 1rem;
   color: var(--main-clr);
   font-size: 1.7rem;
   text-align: center;
 }
 
-.header .navbar a:hover , .header .nav-bar a:hover{
+.header .navbar a:hover,
+.header .nav-bar a:hover {
   color: rgb(133, 133, 119);
   border-bottom: var(--border-hover);
   border-radius: var(--border-radius-hover);
@@ -362,7 +364,7 @@ section {
   position: absolute;
   left: 2rem;
   top: 2rem;
-  font-size: 6rem;
+  font-size: 4.5rem;
 }
 
 .review .review-slider .box .fa-quote-right {
@@ -371,7 +373,7 @@ section {
   position: absolute;
   right: 2rem;
   bottom: 2rem;
-  font-size: 6rem;
+  font-size: 4.5rem;
 }
 
 .review .review-slider .box img {
@@ -403,6 +405,7 @@ section {
 .book form textarea:focus {
   border: var(--border-hover);
   border-radius: var(--border-radius-hover);
+  outline: none;
 }
 
 .footer {
@@ -433,14 +436,19 @@ section {
   ##Screen = B/w 320px to 479px
 */
 @media (min-width: 320px) and (max-width: 480px) {
+
+  body, html{
+    overflow-x: hidden;
+  }
+
   .section {
     width: 100%;
+    overflow-x: hidden;
   }
 
   .header .nav-bar {
     display: none;
   }
-
 
   .heading {
     font-size: 5rem;
@@ -467,14 +475,14 @@ section {
   }
 
   .home .image-slider {
-    padding-top: 7rem;
+    padding-top: 5rem;
   }
 
   .home .image-slider img {
     height: 8rem;
   }
 
-  .home .row .image{
+  .home .row .image {
     padding: 4rem 0rem 0rem 9rem;
   }
 
@@ -483,9 +491,28 @@ section {
   }
 
   .home {
-    background-size: 420%;
+    background-size: 160rem;
     background-repeat: no-repeat;
     background-position: top;
+  }
+
+  .about .row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .about .row .icons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2,1fr);
+  }
+
+  .about .row .icons-container div:nth-of-type(3){
+    grid-column: span 2;
+    grid-row: 2;
+    align-self: center;
   }
 
   .menu .box-container {
@@ -529,14 +556,13 @@ section {
  ##Screen = B/w 481px to 767px
 */
 @media (min-width: 481px) and (max-width: 767px) {
-   .section {
+  .section {
     width: 100%;
   }
 
   .header .nav-bar {
     display: none;
   }
-
 
   .heading {
     font-size: 5rem;
@@ -557,7 +583,7 @@ section {
   }
 
   .home .row .content h3 {
-    font-size: 3rem;
+    font-size: 4rem;
     text-wrap: wrap;
     width: fit-content;
   }
@@ -570,18 +596,31 @@ section {
     height: 8rem;
   }
 
-  .home .row .image{
+  .home .row .image {
     padding: 4rem 0rem 0rem 10rem;
   }
 
   .home .row .image img {
-    height: 16rem;
+    height: 19rem;
   }
 
   .home {
-    background-size: 430%;
+    background-size: 120rem;
     background-repeat: no-repeat;
     background-position: top;
+  }
+
+  .about .row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .about .row .icons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
 
   .menu .box-container {
@@ -604,47 +643,293 @@ section {
     font-size: 2rem;
     margin: 0.5rem;
   }
-}
 
-.menu .box-container .box .content p {
-  font-size: 1rem;
-  margin: 0.5rem;
-}
+  .menu .box-container .box .content p {
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
 
-.menu .box-container .box .content .price {
-  font-size: 1.5rem;
-  margin: 0.5rem;
-}
+  .menu .box-container .box .content .price {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
 
-.review .review-slider {
-  padding: 0rem;
+  .review .review-slider {
+    padding: 0rem;
+  }
 }
-}
-
 /* 
   ##Device = Tablets, Ipads (landscape)  ##Screen = B/w 768px to 1024px
 */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  /* CSS */
+  .section {
+    width: 100%;
+  }
+
+  .header .nav-bar {
+    display: none;
+  }
+
+  .heading {
+    font-size: 5rem;
+  }
+
+  .menu .heading {
+    color: var(--main-clr);
+    padding-bottom: 1rem;
+  }
+
+  .heading span {
+    font-size: 2rem;
+  }
+
+  .home .row .content {
+    width: 95%;
+    padding-top: 3rem;
+  }
+
+  .home .row .content h3 {
+    font-size: 6rem;
+    text-wrap: wrap;
+    width: fit-content;
+  }
+
+  .home .image-slider {
+    padding-top: 7rem;
+  }
+
+  .home .image-slider img {
+    height: 8rem;
+  }
+
+  .home .row .image {
+    padding: 4rem 0rem 0rem 10rem;
+  }
+
+  .home .row .image img {
+    height: 26rem;
+  }
+
+  .home {
+    background-size: 150rem;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding-top: 20rem;
+  }
+
+  .menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .menu .box-container .box {
+    margin: 0.5rem;
+    width: 95%;
+  }
+
+  .menu .box-container .box img {
+    height: 7rem;
+  }
+
+  .menu .box-container .box .content h3 {
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+
+  .menu .box-container .box .content p {
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
+
+  .menu .box-container .box .content .price {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  .about .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review .review-slider {
+    padding: 0rem;
+  }
 }
 
 /* 
   ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px
 */
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* CSS */
+  .section {
+    width: 100%;
+  }
+
+  .header .nav-bar {
+    display: none;
+  }
+
+  .heading {
+    font-size: 5rem;
+  }
+
+  .menu .heading {
+    color: var(--main-clr);
+    padding-bottom: 1rem;
+  }
+
+  .heading span {
+    font-size: 2rem;
+  }
+
+  .home .row .content {
+    width: 95%;
+    padding-top: 3rem;
+  }
+
+  .home .row .content h3 {
+    font-size: 6rem;
+    text-wrap: wrap;
+    width: fit-content;
+  }
+
+  .home .image-slider {
+    padding-top: 7rem;
+  }
+
+  .home .image-slider img {
+    height: 8rem;
+  }
+
+  .home .row .image {
+    padding: 4rem 0rem 0rem 10rem;
+  }
+
+  .home .row .image img {
+    height: 26rem;
+  }
+
+  .home {
+    background-size: 150rem;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding-top: 20rem;
+  }
+
+  .menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .menu .box-container .box {
+    margin: 0.5rem;
+    width: 95%;
+  }
+
+  .menu .box-container .box img {
+    height: 7rem;
+  }
+
+  .menu .box-container .box .content h3 {
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+
+  .menu .box-container .box .content p {
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
+
+  .menu .box-container .box .content .price {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  .about .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review .review-slider {
+    padding: 0rem;
+  }
 }
 
 /* 
   ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px
 */
 @media (min-width: 1025px) and (max-width: 1280px) {
-  /* CSS */
+  
+  .header #menu-btn {
+    display: none;
+  }
+
+  .about .row .image{
+    height: 100%;
+  }
+
+   .about .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 2rem;
+  }
+
 }
 
 /* 
   ##Device = Desktops  ##Screen = 1281px to higher resolution desktops
 */
 @media (min-width: 1281px) {
-  /* CSS */
+  
+  header #menu-btn {
+    display: none;
+  }
+
+  .home .row .content {
+    width: 95%;
+    padding-top: 3rem;
+  }
+
+  .home .row .content h3 {
+    font-size: 9rem;
+    text-wrap: wrap;
+    width: fit-content;
+  }
+
+  .home .image-slider {
+    padding-top: 27rem;
+  }
+
+  .home .image-slider img {
+    height: 18rem;
+  }
+
+  .home .row .image {
+    padding: 4rem 0rem 0rem 10rem;
+  }
+
+  .home .row .image img {
+    height: 36rem;
+  }
+
+  .home {
+    background-size: 240rem;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding-top: 20rem;
+  }
+
+
 }
